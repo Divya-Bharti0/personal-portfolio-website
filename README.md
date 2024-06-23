@@ -1,1 +1,91 @@
-# personal-portfolio-website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website - Easy Tutorials</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo" alt="Logo">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>UI/UX Designer</p>
+                <h1>Hi, I'm <span>Kelvin</span><br>Jen from Australia</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-------- About -------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <h1 class="sub-title">About Me</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur,
+                     exercitationem impedit maxime porro totam vel dolor mollitia quis quae quia dolorum, 
+                     assumenda itaque ipsa libero. 
+                    Eius animi et qui ipsum?</p>
+                <div class="about-col-1">
+                    <img src="images/user.png" alt="User Image">
+                </div>
+                <div class="about-col-2">
+                    <div class="tab-titles">
+                        <p class="tab-links active-tab" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces.</li>
+                            <li><span>Web Development</span><br>Web development.</li>
+                            <li><span>App Development</span><br>Building Android/iOS apps.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Experience">
+                        <ul>
+                            <li><span>2023-current</span><br>UI/UX design training at Google Institute.</li>
+                            <li><span>2021-2023</span><br>Team Lead at Startup LLC.</li>
+                            <li><span>2020-2021</span><br>Internship at Ekart E-commerce.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2018</span><br>UI/UX designing training at Google Institute.</li>
+                            <li><span>2023</span><br>MBA from IIM Lucknow.</li>
+                            <li><span>2020</span><br>BTech from Bhopal.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function opentab(tabname) {
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            for (var tablink of tablinks) {
+                tablink.classList.remove("active-tab");
+            }
+            for (var tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+
+            document.getElementById(tabname).classList.add("active-tab");
+            event.currentTarget.classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>
